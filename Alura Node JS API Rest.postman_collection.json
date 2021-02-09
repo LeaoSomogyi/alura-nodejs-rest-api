@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"cliente\": \"Felipe\",\r\n    \"pet\": \"Jackinho\",\r\n    \"servico\": \"Tosa\",\r\n    \"status\": \"Agendado\",\r\n    \"observacoes\": \"Cão raivoso da peste\",\r\n    \"data\": \"10/01/2021\"\r\n}",
+							"raw": "{\r\n    \"cliente\": \"12345678909\",\r\n    \"pet\": \"Jackinho\",\r\n    \"servico\": \"Tosa\",\r\n    \"status\": \"Agendado\",\r\n    \"observacoes\": \"Cão raivoso da peste\",\r\n    \"data\": \"10/01/2021\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -74,7 +74,8 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "1"
+									"value": "1",
+									"type": "string"
 								}
 							]
 						}
@@ -109,7 +110,8 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "1"
+									"value": "1",
+									"type": "string"
 								}
 							]
 						}
@@ -135,7 +137,71 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "1"
+									"value": "1",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pet",
+			"item": [
+				{
+					"name": "/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Jack\",\r\n    \"imagem\": \"./assets/jack.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/pets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"pets"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Externo - Clientes",
+			"item": [
+				{
+					"name": "/:cpf",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/:cpf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								":cpf"
+							],
+							"variable": [
+								{
+									"key": "cpf",
+									"value": "12345678909"
 								}
 							]
 						}
